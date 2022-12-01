@@ -1,7 +1,7 @@
 {
-    "name": "package",
-    "version": "1.0.0",
-    "description": "",
+    "name": "simple-functions",
+    "version": "1.0.2",
+    "description": "A multi-purpose NPM package with a lot of features",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "type": "commonjs",
@@ -21,9 +21,16 @@
     ],
     "repository": {
       "type": "git",
-      "url": "git+"
+      "url": "git+https://github.com/retscipE/simple-functions"
     },
-    "keywords": [],
+    "keywords": [
+      "simple",
+      "functions",
+      "calculator",
+      "array",
+      "extra-array",
+      "extra-functions"
+    ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
