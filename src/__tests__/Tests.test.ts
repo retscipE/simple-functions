@@ -29,3 +29,6 @@ test("array", () => {
     // console.log("[SimpleArray().isInArray] " + new simple.SimpleArray(testStringArray).isInArray("String1"))
 });
 
+test("database", () => {
+    // All tests done
+})

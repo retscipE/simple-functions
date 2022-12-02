@@ -1,50 +1,58 @@
 {
     "name": "simple-functions",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A multi-purpose NPM package with a lot of features",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "type": "commonjs",
     "scripts": {
-      "test": "jest --config jestconfig.json",
-      "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-      "lint": "tslint -p tsconfig.json",
-      "build": "tsc",
-      "prepare": "npm run build",
-      "prepublishOnly": "npm test && npm run lint",
-      "preversion": "npm run lint",
-      "version": "npm run format && git add -A src",
-      "postversion": "git push && git push --tags"
+        "test": "jest --config jestconfig.json",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "lint": "tslint -p tsconfig.json",
+        "build": "tsc",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
     },
     "files": [
-      "dist/**/*"
+        "dist/**/*"
     ],
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/retscipE/simple-functions"
+        "type": "git",
+        "url": "git+https://github.com/retscipE/simple-functions"
     },
     "keywords": [
-      "simple",
-      "functions",
-      "calculator",
-      "array",
-      "extra-array",
-      "extra-functions"
+        "simple",
+        "functions",
+        "calculator",
+        "array",
+        "extra-array",
+        "extra-functions",
+        "database",
+        "mysql",
+        "sqlite",
+        "sqlite3"
     ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "@types/jest": "^27.5.0",
-      "@types/node-fetch": "^2.6.1",
-      "jest": "^28.1.0",
-      "prettier": "^2.6.2",
-      "ts-jest": "^28.0.2",
-      "ts-node": "^10.7.0",
-      "tslint": "^6.1.3",
-      "tslint-config-prettier": "^1.18.0"
+        "@types/better-sqlite3": "^7.6.2",
+        "@types/jest": "^27.5.0",
+        "@types/lodash": "^4.14.191",
+        "@types/node-fetch": "^2.6.1",
+        "jest": "^28.1.0",
+        "prettier": "^2.6.2",
+        "ts-jest": "^28.0.2",
+        "ts-node": "^10.7.0",
+        "tslint": "^6.1.3",
+        "tslint-config-prettier": "^1.18.0"
     },
     "dependencies": {
-      "node-fetch": "^2.6.1"
+        "better-sqlite3": "^8.0.1",
+        "lodash": "^4.17.21",
+        "node-fetch": "^2.6.1",
+        "promise-mysql": "^5.2.0"
     }
-  }
-  
+}
