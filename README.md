@@ -95,8 +95,7 @@ const SimpleDB = new Simple.SimpleDB();
 
 ## To Use Database Functions (w/ MySQL)
 ```js
-import { SimpleDB } from 'simple-functions'
-import { MySQLDriver } from 'simple-functions/dist/Database'
+import { SimpleDB, MySQLDriver } from 'simple-functions'
 
 (async () => {
     const mysqlDriver = new MySQLDriver({
