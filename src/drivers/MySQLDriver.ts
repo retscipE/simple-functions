@@ -43,7 +43,7 @@ export class MySQLDriver implements IDriver {
             `SELECT json FROM ${table} WHERE ID = ?`,
             [key]
         );
-        if (results.length == 0) return null;
+        if (results.length === 0) return null;
         return JSON.parse(results[0].json);
     }
 

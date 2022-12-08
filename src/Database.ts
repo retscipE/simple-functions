@@ -37,13 +37,13 @@ export class SimpleDB {
         value: number,
         sub = false
     ): Promise<number> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
         if (value == null) throw new Error("Missing second argument (value)");
 
         let currentNumber = await this.get<number>(key);
         if (currentNumber == null) currentNumber = 0;
-        if (typeof currentNumber != "number") {
+        if (typeof currentNumber !== "number") {
             try {
                 currentNumber = parseFloat(currentNumber as string);
             } catch (_) {
@@ -70,7 +70,7 @@ export class SimpleDB {
     }
 
     async get<T>(key: string): Promise<T | null> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
 
         if (key.includes(".") && !this.normalKeys) {
@@ -86,7 +86,7 @@ export class SimpleDB {
     }
 
     async set<T>(key: string, value: any): Promise<T> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
         if (value == null) throw new Error("Missing second argument (value)");
 
@@ -94,7 +94,7 @@ export class SimpleDB {
             const keySplit = key.split(".");
             let obj = await this.get<any>(keySplit[0]);
             // If it's not an instance of an object (rewrite it)
-            if (obj instanceof Object == false) {
+            if (obj instanceof Object === false) {
                 obj = {};
             }
 
@@ -103,7 +103,7 @@ export class SimpleDB {
                 this.tableName,
                 keySplit[0],
                 valueSet,
-                obj != null
+                obj !== null
             );
         }
 
@@ -112,11 +112,11 @@ export class SimpleDB {
     }
 
     async has(key: string): Promise<boolean> {
-        return (await this.get(key)) != null;
+        return (await this.get(key)) !== null;
     }
 
     async delete(key: string): Promise<number> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
 
         if (key.includes(".")) {
@@ -127,7 +127,7 @@ export class SimpleDB {
                 this.tableName,
                 keySplit[0],
                 obj,
-                obj != null
+                obj !== null
             );
         }
 
@@ -147,7 +147,7 @@ export class SimpleDB {
     }
 
     async push<T>(key: string, value: any | any[]): Promise<T[]> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
         if (value == null) throw new Error("Missing second argument (value)");
 
@@ -159,7 +159,7 @@ export class SimpleDB {
     }
 
     async unshift<T>(key: string, value: any | any[]): Promise<T[]> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
         if (value == null) throw new Error("Missing second argument (value)");
 
@@ -171,7 +171,7 @@ export class SimpleDB {
     }
 
     async pop<T>(key: string): Promise<any> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
 
         const currentArr = await this.getArray<T>(key);
@@ -183,7 +183,7 @@ export class SimpleDB {
     }
 
     async shift<T>(key: string): Promise<any> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
 
         const currentArr = await this.getArray<T>(key);
@@ -198,12 +198,12 @@ export class SimpleDB {
         key: string,
         value: any | any[] | ((data: any) => boolean)
     ): Promise<T[]> {
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("First argument (key) needs to be a string");
         if (value == null) throw new Error("Missing second argument (value)");
 
         let currentArr = await this.getArray<T>(key);
-        if (!Array.isArray(value) && typeof value != "function")
+        if (!Array.isArray(value) && typeof value !== "function")
             value = [value];
 
         currentArr = currentArr.filter((e) =>
@@ -217,9 +217,9 @@ export class SimpleDB {
         query: string,
         key = ""
     ): Promise<{ id: string; value: any }[]> {
-        if (typeof query != "string")
+        if (typeof query !== "string")
             throw new Error("First argument (query) needs to be a string");
-        if (typeof key != "string")
+        if (typeof key !== "string")
             throw new Error("Second argument (key) needs to be a string");
 
         // Get either the whole db or the rows from the provided key
@@ -234,7 +234,7 @@ export class SimpleDB {
     }
 
     table(table: string): SimpleDB {
-        if (typeof table != "string")
+        if (typeof table !== "string")
             throw new Error("First argument (table) needs to be a string");
 
         const options = { ...this.options };

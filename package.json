@@ -1,6 +1,6 @@
 {
     "name": "simple-functions",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A multi-purpose NPM package with a lot of features",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

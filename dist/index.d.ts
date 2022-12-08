@@ -1,3 +1,4 @@
 import SimpleCalc from "./Calculator";
 import SimpleArray from "./Array";
-export { SimpleCalc, SimpleArray };
+import { SimpleDB } from "./Database";
+export { SimpleCalc, SimpleArray, SimpleDB };

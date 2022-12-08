@@ -1,7 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimpleArray = exports.SimpleCalc = void 0;
-var Calculator_1 = require("./Calculator");
+exports.SimpleDB = exports.SimpleArray = exports.SimpleCalc = void 0;
+const Calculator_1 = __importDefault(require("./Calculator"));
 exports.SimpleCalc = Calculator_1.default;
-var Array_1 = require("./Array");
+const Array_1 = __importDefault(require("./Array"));
 exports.SimpleArray = Array_1.default;
+const Database_1 = require("./Database");
+Object.defineProperty(exports, "SimpleDB", { enumerable: true, get: function () { return Database_1.SimpleDB; } });
